@@ -9,35 +9,48 @@ body{
   justify-content: center;
   align-items: center;
 }
-#playerData{
-  width: 40%;
+#dataContainer{
+  width: 50%;
 }
-#playerData #searchBar{
+#searchBar{
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  margin-bottom: 30px;
 }
-#playerData #playerCode{
-  width: 80%;
-  padding: 5px;
-}
-#playerData #searchButton{
-  width: 20%;
-  padding: 5px;
-
-}
-#playerData #outputData{
-  padding: 5px;
+#errorMsg{
   text-align: center;
 }
-#playerData #picPlayer{
+#playerCode, #searchButton{
+  padding: 5px 10px;
+}
+#playerCode{
+  width: 50%;
+}
+#searchButton{
+  border: none;
+  background-color: black;
+  color: white;
+}
+#imgContainer, #keysCont, #valuesCont{
   float: left;
-  text-align: center;
 }
-#playerData #stats{
-  float: right;
-  text-align: center;
+#imgContainer{
+  width: 50%;
 }
-#playerData #outputData::after{
+#imgContainer img{
+  max-width: 100%;
+}
+#keysCont{
+  width: 25%;
+}
+#valuesCont{
+  width: 25%;
+}
+#keysCont li, #valuesCont li{
+  list-style-type: none;
+  margin: 15px 0;
+}
+#floatContainer::after{
   content: "";
   display: table;
   clear: both;

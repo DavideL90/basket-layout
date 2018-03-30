@@ -24,24 +24,29 @@ console.log(nomiGiocatori);
 
 //assegno ad una variabile la ul
 var list = document.getElementById("listOfStats");
+var valueList = document.getElementById("listOfValues");
+var image = document.getElementById("imageOfPlayer");
 //assegno ad una variabile un btn e gli associo un evento
 var search = document.getElementById("searchButton");
 search.addEventListener("click",function(){
                         //svuoto ogni volta il div perché voglio che sparisca il messaggio di errore
-                        document.getElementById("outputData").innerHTML = "";
+                        document.getElementById("errorMsg").innerHTML = "";
+                        list.innerHTML = "";
+                        valueList.innerHTML ="";
                         var playerCode = document.getElementById("playerCode").value;
                         document.getElementById("playerCode").value = "";
                         //eseguo una ricerca del codice del giocatore
                         var isFound = isFoundCode(nomiGiocatori, playerCode);
                         if(isFound[0] == false){
-                          document.getElementById("outputData").innerHTML = "Hai inserito un codice errato o inesistente. Riprova!";
+                          document.getElementById("errorMsg").innerHTML = "Hai inserito un codice errato o inesistente. Riprova!";
                         }
                         else{
                           var keylist = Object.keys(nomiGiocatori[isFound[1]]);
                           for (var i = 0; i < keylist.length; i++) {
-                            list.innerHTML += "<li>" + keylist[i] + ": " + nomiGiocatori[isFound[1]][keylist[i]] + "</li>";
+                            list.innerHTML += "<li>" + keylist[i] + ":" + "</li>";
+                            valueList.innerHTML += "<li>" + nomiGiocatori[isFound[1]][keylist[i]] + "</li>";
                           }
-                          console.log(list);
+                          image.src = "http://cdn5.acolore.com/disegni/colori/201802/giovane-giocatore-di-basket-sport-pallacanestro-1133632.jpg";
                         }
                       })
 
@@ -76,13 +81,3 @@ function isFoundCode(arrGiocatori, codGiocatore){
     return isCodeFound;
   }
 }
-
-// function isCorrectStatistic(nameOfStat){
-//   var listOfStatistics = ["punti_Segnati", "num_Rimbalzi", "falli", "successo_duePunti", "successo_trePunti"];
-//   if(listOfStatistics.includes(nameOfStat)){
-//     return true;
-//   }
-//   else{
-//     return false;
-//   }
-// }
