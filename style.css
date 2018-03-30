@@ -3,3 +3,42 @@
   margin: 0;
   padding: 0;
 }
+body{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#playerData{
+  width: 40%;
+}
+#playerData #searchBar{
+  display: flex;
+  justify-content: space-around;
+}
+#playerData #playerCode{
+  width: 80%;
+  padding: 5px;
+}
+#playerData #searchButton{
+  width: 20%;
+  padding: 5px;
+
+}
+#playerData #outputData{
+  padding: 5px;
+  text-align: center;
+}
+#playerData #picPlayer{
+  float: left;
+  text-align: center;
+}
+#playerData #stats{
+  float: right;
+  text-align: center;
+}
+#playerData #outputData::after{
+  content: "";
+  display: table;
+  clear: both;
+}
